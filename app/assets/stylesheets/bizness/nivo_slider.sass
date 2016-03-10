@@ -1,0 +1,234 @@
+.nivoSlider
+  position: relative
+  width: 100%
+  height: auto
+  overflow: hidden
+  img
+    position: absolute
+    top: 0px
+    left: 0px
+    max-width: none
+
+.nivo-main-image
+  display: block !important
+  position: relative !important
+  width: 100% !important
+
+.nivoSlider a.nivo-imageLink
+  position: absolute
+  top: 0px
+  left: 0px
+  width: 100%
+  height: 100%
+  border: 0
+  padding: 0
+  margin: 0
+  z-index: 6
+  display: none
+  background: white
+  filter: alpha(opacity = 0)
+  opacity: 0
+
+.nivo-slice
+  display: block
+  position: absolute
+  z-index: 5
+  height: 100%
+  top: 0
+
+.nivo-box
+  display: block
+  position: absolute
+  z-index: 5
+  overflow: hidden
+  img
+    display: block
+
+.nivo-caption
+  position: absolute
+  left: 15%
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  color: #fff
+  z-index: 8
+  padding: 20px
+  overflow: hidden
+  display: none
+  min-height: 200px
+  background-color: rgba(33, 46, 51, 1)
+
+.slide_info
+  margin-bottom: 10px
+
+.nivo-caption
+  h1
+    font-size: 28px
+    color: #fff
+    padding: 0
+    margin: 0
+    text-transform: none
+    line-height: 46px
+  p
+    font-size: 14px
+    color: #fff
+    padding: 5px 0
+    margin: 0
+  a
+    display: inline-block !important
+
+.slide_more
+  color: #fff
+  font-size: 14px
+  a
+    background-image: url(../images/arrow_1.png)
+    background-repeat: no-repeat
+    background-position: 110px center
+    color: #fff
+    padding: 10px 40px 10px 15px
+    -webkit-border-radius: 8px
+    -moz-border-radius: 8px
+    border-radius: 8px
+    text-transform: uppercase
+    font-weight: bold
+    background-color: #599c01
+
+.nivo-html-caption
+  display: none
+
+.nivo-directionNav a
+  position: absolute
+  bottom: 10px
+  z-index: 9
+  cursor: pointer
+
+.nivo-prevNav
+  left: 45px
+
+.nivo-nextNav
+  right: 45px
+
+.nivo-controlNav
+  text-align: center
+  padding: 15px 0
+  a
+    cursor: pointer
+    &.active
+      font-weight: bold
+
+.nivo-directionNav a
+  border: 0 none
+  display: block
+  height: 43px
+  opacity: 0
+  text-indent: -9999px
+  transition: all 200ms ease-in-out 0s
+  width: 43px
+
+#slider:hover .nivo-directionNav a
+  opacity: 0.8
+
+.theme-default
+  position: relative
+  .nivoSlider
+    position: relative
+    background: #fff url(../images/loading.gif) no-repeat 50% 50%
+    img
+      position: absolute
+      top: 0px
+      left: 0px
+      display: none
+    a
+      border: 0
+      display: block
+  .nivo-controlNav
+    position: absolute
+    bottom: 29px
+    text-align: center
+    padding: 18px 20px 0 20px
+    width: 170px
+    height: 37px
+    left: 45%
+    z-index: 8
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    a
+      display: inline-block
+      width: 8px
+      height: 8px
+      background-color: #f3f3f3
+      border-radius: 5px
+      text-indent: -9999px
+      margin: 0 3px
+      &.active
+        background-position: 0 -14px
+  .nivo-directionNav a
+    display: block
+    width: 35px
+    height: 43px
+    background: url(../images/slide-nav.png) no-repeat
+    text-indent: -9999px
+    border: 0
+    bottom: 190px
+    -webkit-transition: all 200ms ease-in-out
+    -moz-transition: all 200ms ease-in-out
+    -o-transition: all 200ms ease-in-out
+    transition: all 200ms ease-in-out
+  &:hover .nivo-directionNav a
+    opacity: 1
+  a.nivo-nextNav
+    background-position: -60px 0
+  .nivo-caption a
+    color: #fff
+    &:hover
+      color: #fff
+  .nivo-controlNav.nivo-thumbs-enabled
+    width: 100%
+    a
+      width: auto
+      height: auto
+      background: none
+      margin-bottom: 5px
+    img
+      display: block
+      width: 120px
+      height: auto
+
+.pagination ul li
+  span.current, &:hover a, span.current, &:hover a
+    background-color: #599c01
+
+@media only screen and (min-width: 1000px)
+  .nivo-caption
+    width: 504px
+    bottom: 20%
+
+@media only screen and (min-width: 768px) and (max-width: 999px)
+  .nivo-caption
+    width: 400px
+    bottom: 60px
+    left: 5%
+    min-height: auto
+    padding: 5px 20px
+  .theme-default .nivo-directionNav a
+    bottom: 110px
+
+@media only screen and (max-width: 767px)
+  .nivo-caption
+    width: 50%
+    bottom: 20px
+    left: 0
+    background-color: transparent !important
+    display: none !important
+    h1
+      font-size: 16px
+      line-height: 22px
+    p
+      font-size: 11.5px
+  .slide_info
+    margin-bottom: 0
+  .nivo-controlNav, .nivo-directionNav
+    bottom: -10px !important
+  .nivo-controlNav, .nivo-directionNav
+    display: none !important
