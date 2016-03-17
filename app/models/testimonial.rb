@@ -4,6 +4,6 @@ class Testimonial < ActiveRecord::Base
   # Ensure that a user_id is present
   validates :user_id, presence: true
 
-  #Ensure a title has at least 1 characters
-  validates :title, presence: true, length: { minimum: 1 }
+  # Ensure a title exists
+  validates :title, presence: true
 end
