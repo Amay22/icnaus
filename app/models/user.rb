@@ -39,4 +39,6 @@ class User < ActiveRecord::Base
       devise_mailer.send(notification, self, *args).deliver_later
     end
   end
+
+  has_many :testimonials
 end
