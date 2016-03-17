@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  # get '/secret', to: 'pages#secret', as: :secret
+  get '/secret', to: 'pages#secret', as: :secret
   root to: 'pages#index'
 
-  get '/feeding', to: 'pages#feeding', as: :feeding 
+  get '/feeding', to: 'pages#feeding', as: :feeding
 
   get '/shelter', to: 'pages#shelter', as: :shelter
 
-  get '/testimonials', to: 'pages#testimonials', as: :testimonials    
+  get '/testimonials', to: 'pages#testimonials', as: :testimonials
 
   get '/donate', to: 'pages#donate', as: :donate
 
@@ -16,17 +16,17 @@ Rails.application.routes.draw do
 
   get '/donateblog', to: 'pages#donateblog', as: :donateblog
 
-  get '/testimonialsblog', to: 'pages#testimonialsblog', as: :testimonialsblog 
+  get '/testimonialsblog', to: 'pages#testimonialsblog', as: :testimonialsblog
 
   get '/shelterblog', to: 'pages#shelterblog', as: :shelterblog
 
-  get '/feedinghomelessblog', to: 'pages#feedinghomelessblog', as: :feedinghomelessblog 
+  get '/feedinghomelessblog', to: 'pages#feedinghomelessblog', as: :feedinghomelessblog
 
-  get '/news', to: 'pages#news', as: :news 
+  get '/news', to: 'pages#news', as: :news
 
 
 
-  
+
 
 
 
