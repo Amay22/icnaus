@@ -6,10 +6,9 @@ default: &default
   username: <%= ENV['ICNAUS_DB_USER'] %> #icnaus_db
 
 development:
-  adapter: sqlite3.sqlite3
-  pool: 5
-  timeout: 5000
-  database: db/icnaus_db_development.sqlite3
+  <<: *default
+  password: <%= ENV['ICNAUS_USER_POSTGRES_PASSWORD'] %>
+  database: icnaus_db_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,5 +21,4 @@ test:
 production:
   <<: *default
   password: <%= ENV['ICNAUS_USER_POSTGRES_PASSWORD'] %>
-  # database: icnaus_db_production
   database: icnaus_db_development

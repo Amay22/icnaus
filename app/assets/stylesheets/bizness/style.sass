@@ -1,4 +1,4 @@
-body
+mebody
   margin: 0
   padding: 0
   font: 13px arial
@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6
   word-wrap: break-word
   font-weight: 400
   margin-bottom: 15px
-  font-family: 'PT Sans',san-serif
+  font-family: 'Open Sans', sans-serif
 
 h1
   font-size: 28px
@@ -147,7 +147,7 @@ code
   display: block
 
 hr
-  background: url(images/hr_double.png) repeat-x center top
+  background: url('/assets/hr_double.png') repeat-x center top
   border: none
   height: 8px
   padding: 10px 0
@@ -180,11 +180,12 @@ hr
 
 .head_fix
   height: 130px
+  color : blacks
 
 .mobile_nav a
   background: url(images/base/mobile_nav_right.png) no-repeat right center #222
   border: 1px #ccc solid
-  margin-top: 10px
+  margin-top: 20px
   padding: 12px 20px
   display: none
   color: #fff
@@ -196,11 +197,13 @@ hr
   padding: 25px 0 0 0
   h1
     text-transform: uppercase
-    font: 36px 'PT Sans',san-serif
+    font: 34px 'Open Sans', sans-serif
+    font-weight: bold
     margin: 0
   p
     margin: 0
     line-height: inherit
+    font: 17px 'Open Sans', sans-serif
 
 .header_right
   float: right
@@ -212,7 +215,7 @@ hr
 
 .header_menu nav
   float: left
-  font: 18px 'PT Sans',san-serif
+  font: 18px 'Open Sans', sans-serif
 
 .readmore
   color: #fff
@@ -226,7 +229,7 @@ h3.widget_title, .readmore:hover
   background-color: #212e33
 
 a, .tm_client strong
-  color: #5b9f01
+  color: #55A79A
 
 .col_one_half, .col_one_third, .col_one_fourth, .col_one_fifth
   float: left
@@ -248,7 +251,7 @@ a, .tm_client strong
   margin-right: 2%
 
 .main_content_wrap
-  background: url(images/front_wrap_bg.png) repeat-x left top #fff
+  background: url('/assets/front_wrap_bg.png') repeat-x left top #fff
   box-shadow: 0 0 3px rgba(100, 100, 100, 0.3)
   position: relative
   overflow: visible
@@ -576,11 +579,11 @@ section#home_slider
       color: #3a3a3a
 
 .sidebar-repeat
-  background: url(images/sidebar_shadow.png) no-repeat left top
+  background: url('/assets/sidebar_shadow.png') no-repeat left top
   padding-left: 35px
 
 .shadow-bottom
-  background: url(images/sidebar_shadow_bot.png) no-repeat left bottom
+  background: url('/assets/sidebar_shadow_bot.png') no-repeat left bottom
   height: 98px
   margin-top: -20px
 
@@ -607,7 +610,7 @@ section#home_slider
 
 .readmorelink
   font-size: 11px
-  background: url(images/bullet-2.png) no-repeat right 6px
+  background: url('/assets/bullet-2.png') no-repeat right 6px
   padding: 0 15px 0 0
   width: auto
   display: inline-block
@@ -638,6 +641,7 @@ ol.comment-list
     margin: 0
 
 .page_wrapper
+  width: 1000px
   padding: 20px
   ul
     list-style: none
@@ -656,9 +660,9 @@ ol.comment-list
   margin-bottom: 20px
 
 #footer
-  color: #c7c6c6
+  color: #333
   padding: 20px 0
-  font: 13px arial
+  font: 13px 'Open Sans', sans-serif
   a:hover
     color: #ffffff
   ul li
@@ -667,9 +671,10 @@ ol.comment-list
     a
       display: block
       padding: 0 6px
-      color: #fff
+      color: #ffffff
     ul
       display: none
+      color: #ffffff
   p
     margin: 0
 
@@ -714,32 +719,33 @@ ol.comment-list
   .textwidget
     display: inline
   .facebook
-    background: url(images/fb.png) no-repeat center center
+    background: url('/assets/fb.png') no-repeat center center
   .twitter
-    background: url(images/twitter.png) no-repeat center center
+    background: url('/assets/twitter.png') no-repeat center center
   .linkedin
-    background: url(images/linkedin.png) no-repeat center center
+    background: url('/assets/linkedin.png') no-repeat center center
   .gplus
-    background: url(images/g+.png) no-repeat center center
+    background: url('/assets/g.png') no-repeat center center
   .flickr
-    background: url(images/flickr.png) no-repeat center center
+    background: url('/assets/flickr.png') no-repeat center center
 
 
 #menu_fix
   margin: 0 auto
   position: relative
+  left: 40px
   width: 990px
 
 .header_menu
   position: absolute
-  width: 990px
+  width: 910px
   margin: -25px auto 0 auto
   z-index: 999
   padding: 0
   -webkit-box-shadow: 0 10px 10px -8px #222
   -moz-box-shadow: 0 10px 10px -8px #222
   box-shadow: 0 10px 10px -8px #222
-  background-color: #599c01
+  background-color: #333
 
 nav ul
   list-style: none
@@ -808,7 +814,7 @@ nav ul
   width: 1050px
 
 .left_shadow
-  background: url(images/content_left_shadow.png) no-repeat left top
+  background: url('/assets/content_left_shadow.png') no-repeat left top
   position: absolute
   width: 31px
   height: 334px
@@ -816,7 +822,7 @@ nav ul
   top: 0
 
 .right_shadow
-  background: url(images/content_right_shadow.png) no-repeat right top
+  background: url('/assets/content_right_shadow.png') no-repeat right top
   position: absolute
   width: 31px
   height: 334px
