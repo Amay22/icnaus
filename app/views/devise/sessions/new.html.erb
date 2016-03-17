@@ -1,3 +1,8 @@
+<div class="content-area">
+    <div class="container main_content_wrap">
+      <div class="page_wrapper">  
+       <header class="entry-header">
+         <div class="entry-content">
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -17,10 +22,16 @@
       <%= f.label :remember_me %>
     </div>
   <% end -%>
-
+  <br>
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
+</div>
+        </header> 
+      </div>
+    </div>
+  </div> 
+

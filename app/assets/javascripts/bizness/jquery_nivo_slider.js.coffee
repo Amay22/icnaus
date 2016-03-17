@@ -175,35 +175,6 @@
       # Trigger the afterChange callback
       settings.afterChange.call this
       return
-    # Add slices for slice animations
-
-    createSlices = (slider, settings, vars) ->
-      `var i`
-      if $(vars.currentImage).parent().is('a')
-        $(vars.currentImage).parent().css 'display', 'block'
-      $('img[src="' + vars.currentImage.attr('src') + '"]', slider).not('.nivo-main-image,.nivo-control img').width(slider.width()).css('visibility', 'hidden').show()
-      sliceHeight = if $('img[src="' + vars.currentImage.attr('src') + '"]', slider).not('.nivo-main-image,.nivo-control img').parent().is('a') then $('img[src="' + vars.currentImage.attr('src') + '"]', slider).not('.nivo-main-image,.nivo-control img').parent().height() else $('img[src="' + vars.currentImage.attr('src') + '"]', slider).not('.nivo-main-image,.nivo-control img').height()
-      i = 0
-      while i < settings.slices
-        sliceWidth = Math.round(slider.width() / settings.slices)
-        if i == settings.slices - 1
-          slider.append $('<div class="nivo-slice" name="' + i + '"><img src="' + vars.currentImage.attr('src') + '" style="position:absolute; width:' + slider.width() + 'px; height:auto; display:block !important; top:0; left:-' + sliceWidth + i * sliceWidth - sliceWidth + 'px;" /></div>').css(
-            left: sliceWidth * i + 'px'
-            width: slider.width() - (sliceWidth * i) + 'px'
-            height: sliceHeight + 'px'
-            opacity: '0'
-            overflow: 'hidden')
-        else
-          slider.append $('<div class="nivo-slice" name="' + i + '"><img src="' + vars.currentImage.attr('src') + '" style="position:absolute; width:' + slider.width() + 'px; height:auto; display:block !important; top:0; left:-' + sliceWidth + i * sliceWidth - sliceWidth + 'px;" /></div>').css(
-            left: sliceWidth * i + 'px'
-            width: sliceWidth + 'px'
-            height: sliceHeight + 'px'
-            opacity: '0'
-            overflow: 'hidden')
-        i++
-      $('.nivo-slice', slider).height sliceHeight
-      sliderImg.stop().animate { height: $(vars.currentImage).height() }, settings.animSpeed
-      return
 
     # Add boxes for box animations
 
@@ -419,7 +390,7 @@
           i++
           return
       else if currentEffect == 'fade'
-        createSlices slider, settings, vars
+        
         firstSlice = $('.nivo-slice:first', slider)
         firstSlice.css 'width': slider.width() + 'px'
         firstSlice.animate { opacity: '1.0' }, settings.animSpeed * 2, '', ->
@@ -616,4 +587,4 @@
     afterLoad: ->
   $.fn._reverse = [].reverse
   return
-) jQuery
+) $

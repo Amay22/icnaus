@@ -1,3 +1,8 @@
+<div class="content-area">
+    <div class="container main_content_wrap">
+      <div class="page_wrapper">  
+       <header class="entry-header">
+         <div class="entry-content">
 <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -7,10 +12,16 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
-
+  <br>
   <div class="actions">
     <%= f.submit "Send me reset password instructions" %>
   </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
+ </div>
+        </header> 
+      </div>
+    </div>
+  </div> 
+
