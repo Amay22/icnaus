@@ -17,12 +17,19 @@ class TestimonialsController < ApplicationController
   # GET /testimonials/1
   # GET /testimonials/1.json
   def show
-    @testimonial = current_user.testimonials.where(id: params[:id]).first
+    # @testimonial = current_user.testimonials.where(id: params[:id]).first
+    # @testimonial = current_user.testimonials.where(id: params[:id])
+    # @task = current_user.tasks.where(id: params[:id])
+
+    # respond_to do |format|
+    #   format.html { render nothing: true, layout: true }
+    #   format.json { render json: @task }
+    # end
   end
 
   # GET /testimonials/new
   def new
-    @testimonials = current_user.testimonials.new
+    @testimonial = current_user.testimonials.new
   end
 
   # GET /testimonials/1/edit
@@ -48,9 +55,9 @@ class TestimonialsController < ApplicationController
   # PATCH/PUT /testimonials/1
   # PATCH/PUT /testimonials/1.json
   def update
-    @testimonial = current_user.bookmarks.find(params[:id])
-    @bookmark.testimonial = params[:testimonial]
-    @bookmark.title = params[:title]
+    @testimonial = current_user.testimonials.find(params[:id])
+    @testimonial.testimonial = params[:testimonial]
+    @testimonial.title = params[:title]
     respond_to do |format|
       if @testimonial.update(testimonial_params)
         format.html { redirect_to @testimonial, notice: 'Testimonial was successfully updated.' }
@@ -65,7 +72,7 @@ class TestimonialsController < ApplicationController
   # DELETE /testimonials/1
   # DELETE /testimonials/1.json
   def destroy
-    @testimonial = current_user.bookmarks.find(params[:id])
+    @testimonial = current_user.testimonials.find(params[:id])
     @testimonial.destroy
     respond_to do |format|
       format.html { redirect_to testimonials_url, notice: 'Testimonial was successfully destroyed.' }
@@ -81,6 +88,6 @@ class TestimonialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def testimonial_params
-      params.require(:testimonial).permit(:testimonial, :title, :user_name, :user_id)
+      params.require(:testimonial).permit(:testimonial, :title, :user_name)
     end
 end
