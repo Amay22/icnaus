@@ -5,7 +5,7 @@ class TestimonialsController < ApplicationController
   # GET /testimonials
   # GET /testimonials.json
   def index
-    @testimonials = current_user.bookmarks.all
+    @testimonials = current_user.testimonials.all
   end
 
   # GET /posts
@@ -81,6 +81,6 @@ class TestimonialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def testimonial_params
-      params.require(:testimonial).permit(:testimonial, :title, :user_name)
+      params.require(:testimonial).permit(:testimonial, :title, :user_name, :user_id)
     end
 end

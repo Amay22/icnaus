@@ -18,14 +18,15 @@ ActiveRecord::Schema.define(version: 20160317150326) do
 
   create_table "testimonials", force: :cascade do |t|
     t.text     "testimonial"
-    t.string   "title"        default: "", null: false
-    t.string   "user_name"    default: "", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "title",       default: "", null: false
+    t.string   "user_name",   default: "", null: false
+    t.integer  "user_id",                  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"                    default: "", null: false
+    t.string   "name",                   default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
