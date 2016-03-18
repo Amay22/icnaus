@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   pool: 5
   timeout: 5000
-  username: <%= ENV['ICNAUS_DB_USER'] %> #icnaus_db
+  username: <%= ENV['ICNAUS_DB_USER'] %>
 
 development:
   <<: *default

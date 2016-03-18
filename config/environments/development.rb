@@ -44,4 +44,14 @@ config.active_support.deprecation = :log
 
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+
+  ActionMailer::Base.smtp_settings = {
+    address:               'smtp.gmail.com',
+    port:                  587,
+    authentication:        :plain,
+    user_name:             ENV['ICNAUS_EMAIL_USERNAME'],
+    password:              ENV['ICNAUS_EMAIL_PASSWORD'],
+    enable_starttls_auto:  true
+  }
 end
