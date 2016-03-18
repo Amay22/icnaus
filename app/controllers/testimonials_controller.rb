@@ -1,10 +1,16 @@
 class TestimonialsController < ApplicationController
   before_action :set_testimonial, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
 
   # GET /testimonials
   # GET /testimonials.json
   def index
+    @testimonials = current_user.bookmarks.all
+  end
+
+  # GET /posts
+  # GET /posts.json
+  def testimonils
     @testimonials = Testimonial.all
   end
 
@@ -15,7 +21,7 @@ class TestimonialsController < ApplicationController
 
   # GET /testimonials/new
   def new
-    @testimonial = Testimonial.new
+    @testimonials = current_user.bookmarks.new
   end
 
   # GET /testimonials/1/edit
@@ -25,8 +31,8 @@ class TestimonialsController < ApplicationController
   # POST /testimonials
   # POST /testimonials.json
   def create
-    @testimonial = Testimonial.new(testimonial_params)
-
+    @testimonial = current_user.testimonials.new(testimonial_params)
+    @testimonial.user_name = current_user.name
     respond_to do |format|
       if @testimonial.save
         format.html { redirect_to @testimonial, notice: 'Testimonial was successfully created.' }
@@ -41,6 +47,9 @@ class TestimonialsController < ApplicationController
   # PATCH/PUT /testimonials/1
   # PATCH/PUT /testimonials/1.json
   def update
+    @testimonial = current_user.bookmarks.find(params[:id])
+    @bookmark.testimonial = params[:testimonial]
+    @bookmark.title = params[:title]
     respond_to do |format|
       if @testimonial.update(testimonial_params)
         format.html { redirect_to @testimonial, notice: 'Testimonial was successfully updated.' }
@@ -55,6 +64,7 @@ class TestimonialsController < ApplicationController
   # DELETE /testimonials/1
   # DELETE /testimonials/1.json
   def destroy
+    @testimonial = current_user.bookmarks.find(params[:id])
     @testimonial.destroy
     respond_to do |format|
       format.html { redirect_to testimonials_url, notice: 'Testimonial was successfully destroyed.' }
@@ -70,6 +80,6 @@ class TestimonialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def testimonial_params
-      params.require(:testimonial).permit(:testimonial, :title, :user_id)
+      params.require(:testimonial).permit(:testimonial, :title, :user_name)
     end
 end
