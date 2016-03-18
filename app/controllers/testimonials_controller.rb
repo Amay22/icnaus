@@ -17,11 +17,12 @@ class TestimonialsController < ApplicationController
   # GET /testimonials/1
   # GET /testimonials/1.json
   def show
+    @testimonial = current_user.testimonials.where(id: params[:id]).first
   end
 
   # GET /testimonials/new
   def new
-    @testimonials = current_user.bookmarks.new
+    @testimonials = current_user.testimonials.new
   end
 
   # GET /testimonials/1/edit
