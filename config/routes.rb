@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get '/secret', to: 'pages#secret', as: :secret
   root to: 'pages#index'
 
+  get '/dashboard', to: 'testimonials#dashboard', as: :dashboard
+
+  get '/latest', to: 'testimonials#latest', as: :latest
+
   get '/feeding', to: 'pages#feeding', as: :feeding
 
   get '/shelter', to: 'pages#shelter', as: :shelter

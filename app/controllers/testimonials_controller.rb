@@ -1,30 +1,28 @@
 class TestimonialsController < ApplicationController
   before_action :set_testimonial, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:dashboard, :edit, :update, :destroy]
 
   # GET /testimonials
   # GET /testimonials.json
   def index
-    @testimonials = current_user.testimonials.all
+    @testimonials = Testimonial.all.order('created_at Desc')
   end
 
-  # GET /posts
-  # GET /posts.json
-  def testimonils
-    @testimonials = Testimonial.all
+  # GET /dashboard
+  # GET /dashboard.json
+  def dashboard
+    @testimonials = current_user.testimonials.all.order('created_at Desc')
+  end
+
+  # GET /latest
+  # GET /latest.json
+  def latest
+    @testimonials = Testimonial.order('created_at Desc limit 5')
   end
 
   # GET /testimonials/1
   # GET /testimonials/1.json
   def show
-    # @testimonial = current_user.testimonials.where(id: params[:id]).first
-    # @testimonial = current_user.testimonials.where(id: params[:id])
-    # @task = current_user.tasks.where(id: params[:id])
-
-    # respond_to do |format|
-    #   format.html { render nothing: true, layout: true }
-    #   format.json { render json: @task }
-    # end
   end
 
   # GET /testimonials/new
