@@ -19,9 +19,9 @@
                 <div class="header_right">
                   <div >&nbsp;&nbsp;&nbsp;
                   <% if user_signed_in? %>
-                  <%= current_user.name %>
-                  <%= link_to 'Profile', edit_user_registration_path %>
-                  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+                  <font size="3"><%= current_user.name %></font>
+                  <font size="4"><%= link_to 'Profile', edit_user_registration_path %></font>&nbsp;|
+                  <font size="4"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></font>
                    <% else %>
                     &nbsp;<font size="4"><%= link_to 'Log In', new_user_session_path %></font>&nbsp;|
                     <font size="4"><%= link_to 'Sign Up', new_user_registration_path %></font>

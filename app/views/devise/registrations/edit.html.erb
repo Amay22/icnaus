@@ -1,3 +1,8 @@
+<div class="content-area">
+    <div class="container main_content_wrap">
+      <div class="page_wrapper">  
+       <header class="entry-header">
+         <div class="entry-content">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -37,3 +42,8 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 <br>
 <%= link_to "Back", :back %>
+</div>
+        </header> 
+      </div>
+    </div>
+  </div>

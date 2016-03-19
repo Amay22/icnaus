@@ -1,37 +1,50 @@
+<div class="content-area">
+    <div class="container main_content_wrap">
+      <div class="page_wrapper">  
+       <header class="entry-header">
+         <div class="entry-content">
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Testimonials</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Testimonial</th>
-      <th>Title</th>
-      <th>User</th>
-      <th>created on</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h2 class="entry-title">From the Blog</h2>
 
-  <tbody>
+ 
     <% @testimonials.each do |testimonial| %>
-      <tr>
-        <td><%= testimonial.testimonial %></td>
-        <td><%= testimonial.title %></td>
-        <td><%= testimonial.user_name %></td>
-        <td><%= testimonial.created_at %></td>
-        <td><%= link_to 'Show', testimonial %></td>
-        <td><%= link_to 'Edit', edit_testimonial_path(testimonial) %></td>
-        <td><%= link_to 'Destroy', testimonial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div>
+          <!-- <h2 class="entry-title">From the Blog</h2> -->
+          <h3 class="entry-title"><%= testimonial.title %></h3>
+          <div class="post-date"><%= testimonial.created_at %></div><!-- post-date -->
+          <div class="post-comment"> &nbsp;|&nbsp; <%= testimonial.user_name %></div>
+          <div class="post-categories" style="float:none;"> &nbsp;|&nbsp; <a href="/news" rel="category tag">ICNAUS Org News</a></div>
+          <div class="info-wrapper">
 
-<br>
+              <input type="checkbox" id="showhide">
+                <label for="showhide">
+                  <div class="more">Show more</div>
+                  <div>Show less</div>
+                </label>
+                <div class="info">
+                <p><%= testimonial.testimonial %></p>
+                </div>
+          </div>
+    <% end %>
+ 
+
 
 <% if user_signed_in? %>
   <%= link_to 'New Testimonial', new_testimonial_path %>
 <% else %>
   <%= link_to 'Login to add Testimonial', new_user_session_path %>
 <% end %>
+ </div>
+        </header> 
+      </div>
+    </div>
+  </div> 
+
+
+
+
+
+

@@ -1,19 +1,25 @@
+<div class="content-area">
+    <div class="container main_content_wrap">
+      <div class="page_wrapper">  
+       <header class="entry-header">
+         <div class="entry-content">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Testimonial:</strong>
-  <%= @testimonial.testimonial %>
-</p>
-
-<p>
-  <strong>Title:</strong>
+  <strong></strong>
   <%= @testimonial.title %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @testimonial.user_id %>
+  <strong>Testimonial:</strong>
+  <br>
+  <%= @testimonial.testimonial %>
 </p>
 
 <%= link_to 'Edit', edit_testimonial_path(@testimonial) %> |
 <%= link_to 'Back', testimonials_path %>
+</div>
+        </header> 
+      </div>
+    </div>
+  </div>
