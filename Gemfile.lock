@@ -44,6 +44,8 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-social-rails (4.8.0)
+      railties (>= 3.1)
     builder (3.2.2)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -160,6 +162,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  bootstrap-social-rails
   coffee-rails (~> 4.1.0)
   devise
   figaro

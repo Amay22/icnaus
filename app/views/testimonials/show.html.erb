@@ -7,17 +7,19 @@
 
 <p>
   <strong></strong>
-  <%= @testimonial.title %>
+  <font size="4"><%= @testimonial.title %></font>
 </p>
 
 <p>
   <strong>Testimonial:</strong>
   <br>
+  <div style="width:920px">
   <%= @testimonial.testimonial %>
+  </div>
 </p>
 
 <%= link_to 'Edit', edit_testimonial_path(@testimonial) %> |
-<%= link_to 'Back', testimonials_path %>
+<%= link_to 'Back', '/dashboard' %>
 </div>
         </header> 
       </div>

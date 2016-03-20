@@ -6,37 +6,26 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Testimonials</h1>
+<% if user_signed_in? %>
+  <%= link_to 'New Testimonial', new_testimonial_path %>
+<% else %>
+  <%= link_to 'Login to add Testimonial', new_user_session_path %>
+<% end %>
 
-<h2 class="entry-title">From the Blog</h2>
 
  
     <% @testimonials.each do |testimonial| %>
     <div>
           <!-- <h2 class="entry-title">From the Blog</h2> -->
           <h3 class="entry-title"><%= testimonial.title %></h3>
-          <div class="post-date"><%= testimonial.created_at %></div><!-- post-date -->
+          <div class="post-date"><%= testimonial.created_at.strftime('%B %d, %Y') %></div><!-- post-date -->
           <div class="post-comment"> &nbsp;|&nbsp; <%= testimonial.user_name %></div>
-          <div class="post-categories" style="float:none;"> &nbsp;|&nbsp; <a href="/news" rel="category tag">ICNAUS Org News</a></div>
-          <div class="info-wrapper">
-
-              <input type="checkbox" id="showhide">
-                <label for="showhide">
-                  <div class="more">Show more</div>
-                  <div>Show less</div>
-                </label>
-                <div class="info">
+          <br>
+                <div style="width:920px">
                 <p><%= testimonial.testimonial %></p>
                 </div>
-          </div>
+          
     <% end %>
- 
-
-
-<% if user_signed_in? %>
-  <%= link_to 'New Testimonial', new_testimonial_path %>
-<% else %>
-  <%= link_to 'Login to add Testimonial', new_user_session_path %>
-<% end %>
  </div>
         </header> 
       </div>

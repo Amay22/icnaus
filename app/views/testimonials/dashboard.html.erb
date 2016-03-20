@@ -6,20 +6,17 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Testimonials</h1>
+<%= link_to 'New Testimonial', new_testimonial_path %>
+<br><br>
 
 <% @testimonials.each do |testimonial| %>
 <div>
-    <%= testimonial.title %> &nbsp;|
-    <%= link_to 'Show', testimonial %>&nbsp;
+    <font size="4"><%= link_to testimonial.title, testimonial %></font> 
+    <%= testimonial.created_at.strftime('%B %d, %Y') %>&nbsp;|
     <%= link_to 'Edit', edit_testimonial_path(testimonial) %>&nbsp;
     <%= link_to 'Delete', testimonial, method: :delete, data: { confirm: 'Are you sure?' } %>
     <br>
-
-    <div>
-        <div class="info">
-                <%= testimonial.testimonial %>
-        </div>
-    </div>
+    
 </div>
 <br>
 <% end %>
@@ -28,7 +25,7 @@
 
 <br>
 
-<%= link_to 'New Testimonial', new_testimonial_path %>
+
 </div>
         </header> 
       </div>

@@ -27,3 +27,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'figaro'
 # static asset serving and logging on Heroku
 gem 'rails_12factor', group: :production
+# for stocial icons 
+gem 'bootstrap-social-rails'

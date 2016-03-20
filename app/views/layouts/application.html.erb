@@ -19,8 +19,9 @@
                 <div class="header_right">
                   <div >&nbsp;&nbsp;&nbsp;
                   <% if user_signed_in? %>
-                  <font size="3"><%= current_user.name %></font>
-                  <font size="4"><%= link_to 'Profile', edit_user_registration_path %></font>&nbsp;|
+                  <span class="glyphicon glyphicon-user"></span>  
+                  <font size="3"><%= link_to current_user.name, edit_user_registration_path %></font>&nbsp;|
+                  <font size="4"><%= link_to 'Dashboard', '/dashboard'%></font>&nbsp;|
                   <font size="4"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></font>
                    <% else %>
                     &nbsp;<font size="4"><%= link_to 'Log In', new_user_session_path %></font>&nbsp;|
@@ -90,17 +91,18 @@
 <footer id="footer">
   <div class="container">
     <div class="left">
-               <div class="menu"><ul><li class="current_page_item"><a href="/">Home</a></li><li class=""><a href="/feeding">Feeding</a></li><li class=""><a href="/shelter">Shelter</a></li><li class=""><a href="/testimonials">Testimonials</a></li><li class=""><a href="/donate">Donate</a></li><li class=""><a href="/contact">Contact US</a></li></ul></div>
+               <div class="menu"><ul><br><li class="current_page_item"><a href="/">Home</a></li><li class=""><a href="/feeding">Feeding</a></li><li class=""><a href="/shelter">Shelter</a></li><li class=""><a href="/testimonials">Testimonials</a></li><li class=""><a href="/donate">Donate</a></li><li class=""><a href="/contact">Contact Us</a></li></ul>
+               </div>
+               </div>
+                <div class="right"><br>
+                <a href="http://wwww.enterinfinity.com"><p>Design & Developed by - Infinity Concepts & Design Inc</p></a>
+                </div>
+                <div class="clear"></div>
+                </div>
+        <center><p><font color="white" size="1">&nbsp;Copyright © 2016 ICNA WOMEN SHELTER. All Rights Reserved</font></p></center>
 
-        </div>
-      <div class="right">
-      <p><font color="white">&nbsp;Copyright © 2016 ICNA US Org. All Rights Reserved</font><br /></p>
-      <a href="http://wwww.enterinfinity.com"><p>Design & Developed by - Infinity Concepts & Design Inc</p></a>
-      </div>
-        <div class="clear"></div>
-    </div>
 </footer>
-</div>
+
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
