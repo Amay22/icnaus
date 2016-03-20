@@ -29,3 +29,5 @@ gem 'figaro'
 gem 'rails_12factor', group: :production
 # for stocial icons 
 gem 'bootstrap-social-rails'
+# for social icon font
+gem 'font-awesome-rails'
